@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>gradient</title>
+</head>
+<body>
+<canvas id='canvas' style="border:2px solid green" width="400" height="200"></canvas>
+</body>
+<script type="text/javascript">
+  const _colors = ['#fff7e6',
+    '#ffe7ba',
+    '#ffd591',
+    '#ffc069',
+    '#ff9c6e',
+    '#ff9c6e',
+    '#ff7a45',
+    '#ff4d4f',
+    '#f5222d'];
+  var canvas = document.getElementById('canvas');
+  var ctx = canvas.getContext('2d');
+
+  var gradient = ctx.createLinearGradient(0, 0, 200, 0);
+  const per = 1 / (_colors.length - 1);
+  for (let i = 0; i < _colors.length; i++) {
+    gradient.addColorStop(i * per, _colors[i]);
+  }
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, 200, 100);
+  console.log('sssss');
+</script>
+</html>
